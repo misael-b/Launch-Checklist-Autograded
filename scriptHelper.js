@@ -59,8 +59,14 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
          launchStatus.innerHTML = "Awaiting Information Before Launch";
          launchStatus.style.color = "black";
          event.preventDefault();
-     } else if (validateInput(fuelLevel) != "Is a Number" || validateInput(cargoLevel) != "Is a Number") {
-         alert("Please Enter a Numerical Number!!!");
+     } else if (validateInput(fuelLevel) != "Is a Number"){
+         alert("Please Enter a Valid Number for the Fuel Level!!!");
+         div.style.visibility = "hidden";
+         launchStatus.innerHTML = "Awaiting Information Before Launch";
+         launchStatus.style.color = "black";
+         event.preventDefault();
+     }else if (validateInput(cargoLevel) != "Is a Number") {
+         alert("Please Enter a Valid Number for the Cargo Weight!!!");
          div.style.visibility = "hidden";
          launchStatus.innerHTML = "Awaiting Information Before Launch";
          launchStatus.style.color = "black";
