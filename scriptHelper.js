@@ -7,11 +7,11 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
     missionTarget.innerHTML = `
         <h2>Mission Destination</h2>
                  <ol>
-                     <li>Name:${name} </li>
-                     <li>Diameter:${diameter} </li>
+                     <li>Name: ${name} </li>
+                     <li>Diameter: ${diameter} </li>
                      <li>Star: ${star}</li>
-                     <li>Distance from Earth:${distance} </li>
-                     <li>Number of Moons:${moons} </li>
+                     <li>Distance from Earth: ${distance} </li>
+                     <li>Number of Moons: ${moons} </li>
                  </ol>
                  <img src="${imageUrl}">`
                  
@@ -78,6 +78,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
          launchStatus.style.color = "green";
          fuelStatus.innerHTML = "Fuel level high enough for launch";
          cargoStatus.innerHTML = "Cargo mass low enough for launch";
+         div.style.visibility = "visible";
 
 
          if (fuelLevel < 10000) {
@@ -101,7 +102,7 @@ async function myFetch() {
  
     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json")
     return await planetsReturned.json();
- }
+};
  
 function pickPlanet(planets) {
     randomNum = Math.floor(Math.random() * planets.length);
